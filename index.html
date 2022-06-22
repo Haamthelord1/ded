@@ -27,7 +27,7 @@
   }
 </style>
 <div id="total">
-<h1><script>
+<strong><script>
 var loc = localStorage.getItem('bud');
 if (loc == undefined ) {
 var tota = 0;
@@ -48,12 +48,12 @@ var lod = +lo + +m;
 localStorage.setItem('bud',lod)
 var load = lod.toFixed(2);
 var tot = "<strong>"+load+"</strong>";
-//var that = "<br><br>Your Balance";
+//var that = "Your Balance";
 total = tot;
 //tota = that;
 document.getElementById('total').innerHTML = total; }
 /*function DecimalGenerate() { var min = 1.03, max = 5.99, NumberResult = Math.random() * (max - min) + min; //window.print(parseFloat(NumberResult).toFixed( 2 )); }; DecimalGenerate();*/ 
-</script></h1><div id="by"><h2>$</h2></div>  
+</script></strong><div id="by"><h2>$</h2></div>  
 <p><div id="tota"><script>
   if (loc == undefined) {
     var tota = 0;
