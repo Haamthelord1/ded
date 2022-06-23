@@ -98,7 +98,7 @@ input[type=submit]:hover {
 </head>
 <body>
 <div id="fg">
-<h2><script>var l = localStorage.getItem('jab'); var n = parseFloat(l).toFixed(2); var fg = "<br><strong>Your Balance: "+ n+" $</strong><br><br>"; document.getElementById('fg').innerHTML = fg;</script></h2>
+<h2><script>var l = localStorage.getItem('hud'); var n = parseFloat(l).toFixed(2); var fg = "<br><strong>Your Balance: "+ n+" $</strong><br><br>"; document.getElementById('fg').innerHTML = fg;</script></h2>
 </div>
 
 <div class="container">
@@ -143,7 +143,7 @@ input[type=submit]:hover {
     <script>function validateForm() {
  let x = document.forms["myForm"]["fname"].value;
  let y = document.forms["myForm"]["lname"].value;
- let n = localStorage.getItem('jab');
+ let n = localStorage.getItem('hud');
  let m = document.forms["myForm"]["country"].value;
  if (n < m)  { alert("Your Balance Is Insufficient, You Have Only "+n +"$"); }
  else if (x == "" ) { alert("Google Play Email must be filled out"); }
