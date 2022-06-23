@@ -144,8 +144,9 @@ input[type=submit]:hover {
  let x = document.forms["myForm"]["fname"].value;
  let y = document.forms["myForm"]["lname"].value;
  let n = localStorage.getItem('hud');
+ var k = parseFloat(n).toFixed(2);
  let m = document.forms["myForm"]["country"].value;
- if (n < m)  { alert("Your Balance Is Insufficient, You Have Only "+n +"$"); }
+ if (n < m)  { alert("Your Balance Is Insufficient, You Have Only "+k +"$"); }
  else if (x == "" ) { alert("Google Play Email must be filled out"); }
  else if (x.includes("\@") == false ) { alert("Please Enter A Valid Google Play Email"); }
  else if (x.includes(".com") == false ) { alert("Please Enter A Valid Google Play Email"); }
