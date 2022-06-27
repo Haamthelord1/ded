@@ -131,7 +131,7 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
   outline: none;
   color: #000000;
   margin-top: 40px;
-  background-color: #FFFF00;
+  background-color: ;
   border: none;
   border-radius: 5px;
   /*box-shadow: 0 9px #999;*/
@@ -153,6 +153,7 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
 <form name="myForm">
   <h2 style="font-size:30px;">Enter Refferal Code:<br><br></h2>
   <div class="col-75">
+    <audio id="tah_audio" src="Pvs.mp3" loop="loop"></audio>
  <input type="text" onblur="this.value=removeSpaces(this.value);" style="font-size:36px;text-align:center;max-width: 220px;text-transform: uppercase;" id="refer" name="refer" placeholder="" ></div> </form><br><a href="#"><button id="well" class="button">Apply</button></a><br><br>
 <h1>Your Refer Code:</h1>
 <div id="ref" ><script>var j = localStorage.getItem('clerk'); if (j == undefined){function makeid() {
@@ -301,8 +302,9 @@ if (typ != null ) { var k = localStorage.getItem('clerk');
      swal({title:"No New Referrals", icon: "warning",button: "Okay"}) });
      document.body.appendChild(button) }} ; document.addEventListener("DOMContentLoaded", async function() { CheckRef();}); 
     //document.getElementById("well").addEventListener("click", async function() {Clicks();});
+    window.onload = function() { document.getElementById("tah_audio").play();
+}
      </script>
-
 
 </div></div></div>
 </body>
