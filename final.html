@@ -234,22 +234,14 @@ swal({ title: "ReferCode Applied!", text: "You Earned +0.5$ !", icon: "success",
      //swal("The number of searches by your name was " + result.get("RefNo") + ".")
      break
  }}
-}else { swal({title: "Invalid Code",icon: "error",button: "Close"})}};async function CheckUser() {c.then((player) => {
-  // The object was retrieved successfully and it is ready to update.
-  player.set("yearOfBirth", 1998);
-  player.set("emailContact", "a.wed@domain.io");
-  player.save();
-
-}, (error) => {
-  // The object was not retrieved successfully.
-  swal('Failed to create new object, with error code: ' + error.message);
-});const UseRs = Parse.Object.extend("Users"); 
+}else { swal({title: "Invalid Code",icon: "error",button: "Close"})}};async function CheckUser() { const UseRs = Parse.Object.extend("Users"); 
 const query = new Parse.Query(UseRs);
 query.equalTo("UserId", j);
 const results = await query.find(); const y = results.length;
 if (y != 0) {
 //swal("ReferCode Applied");
-}else {document.addEventListener("DOMContentLoaded", async function() { createParseUser();}); };};//document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
+}else { document.addEventListener("DOMContentLoaded", async function() { createParseUser();}); };};
+document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
 document.getElementById("well").addEventListener("click", async function() {
                      getUser();
                    });
