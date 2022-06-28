@@ -153,29 +153,18 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
   <div id="grad">
 <div id="code" >
 <form name="myForm">
-  <h2 style="font-size:30px;">Enter Referrl Code:<br><br></h2>
+  <h2 style="font-size:30px;">Enter Refferal Code:<br><br></h2>
   <div class="col-75">
  <input type="text" onblur="this.value=removeSpaces(this.value);" style="font-size:36px;text-align:center;max-width: 220px;text-transform: uppercase;" id="refer" name="refer" placeholder="" ></div> </form><br><a href="#"><button id="well" class="button">Apply</button></a><br><br>
 <h1>Your Refer Code:</h1>
-<div id="ref" ><script>var j = localStorage.getItem('clerk'); if (j == undefined){function makeid() {
-          var tex = "";
-          var rex = "";
-          var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-          var possib = "1234567890";
-        
-          for (var i = 0; i < 4; i++)
-            tex += possible.charAt(Math.floor(Math.random() * possible.length));
-          var rex = Math.floor(Math.random() * 10);
-          return rex + tex;
-        }
-        
-        var refCode = "EM" + makeid();
-        localStorage.setItem('clerk',refCode); var j = localStorage.getItem('clerk');fg = j; document.getElementById('ref').innerHTML = fg;console.log(j);}else{ var j = localStorage.getItem('clerk');fg = j; document.getElementById('ref').innerHTML = fg;console.log(j);}</script></div><script>var j = localStorage.getItem('id'); var k = localStorage.getItem('clerk'); Parse.initialize("UTdYGyCgpO3VgZYRhYxpr8S1ZtwnYXFSSlviYfBb", "J4fE631M3ax0KhrtGhXTHFHFlbBC2lGfIzdsNBrv"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+<div id="ref" ><script>var u = localStorage.getItem('clerk'); document.getElementById("ref").innerHTML = u;</script></div><script>var j = localStorage.getItem('id'); var k = localStorage.getItem('clerk'); Parse.initialize("UTdYGyCgpO3VgZYRhYxpr8S1ZtwnYXFSSlviYfBb", "J4fE631M3ax0KhrtGhXTHFHFlbBC2lGfIzdsNBrv"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
                 Parse.serverURL = "https://parseapi.back4app.com/";
               
                 // Create a new User
         async function createParseUser() {
-                    // Creates a new Parse "User" object, which is created by default in your Parse app
+                    var j = localStorage.getItem('id'); var k = localStorage.getItem('clerk');
+                    console.log("function Ran")
+                    localStorage.setItem("bright","bulb");
                     const UseRs = Parse.Object.extend("Users");
                  const Users = new UseRs();
                  
@@ -233,16 +222,15 @@ swal({ title: "ReferCode Applied!", text: "You Earned +0.5$ !", icon: "success",
      //swal("The number of searches by your name was " + result.get("RefNo") + ".")
      break
  }}
-}else { swal({title: "Invalid Code",icon: "error",button: "Close"})}};async function CheckUser() { const UseRs = Parse.Object.extend("Users"); 
-const query = new Parse.Query(UseRs);
-var j = localStorage.getItem('id');
-query.equalTo("UserId", j);
-const results = await query.find(); const y = results.length;
-if (y != 0) {
+}else { swal({title: "Invalid Code",icon: "error",button: "Close"})}};//async function CheckUser() { const UseRs = //Parse.Object.extend("Users"); 
+//const query = new Parse.Query(UseRs);
+var j = localStorage.getItem("bright");
+//query.equalTo("UserId", j);
+//const results = await query.find(); const y = results.length;
+if (j != undefined) {
 console.log("If Part Ran");
-}else { console.log("else part ran");
-  document.addEventListener("DOMContentLoaded", async function() { createParseUser();}); };};
-  document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
+}else { console.log("else part ran"); document.addEventListener("DOMContentLoaded", async function() { createParseUser();}); };
+  //document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
 document.getElementById("well").addEventListener("click", async function() {
                      getUser();
                    });
