@@ -164,21 +164,21 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
               
                 // Create a new User
         async function createParseUser() {  setTimeout(function Hid() { window.location.reload();},3000);
-                    var j = localStorage.getItem('id'); var k = localStorage.getItem('clerk');
+                    const j = localStorage.getItem('id');const k = localStorage.getItem('clerk');
                     console.log("function Ran")
-                    localStorage.setItem("jright","bulb");
+                    localStorage.setItem("yright","bulb");
                     const UseRs = Parse.Object.extend("Users");
                  const Users = new UseRs();
                  
                  Users.set("UserId", j);
-                 Users.set("RefCode",k);
+                 Users.set("RefCode", k);
                  Users.set("RefNo",0);
                  
                  Users.save()
                    .then((player) => {
                      // Success
                      swal({ title: "Refer & Earn",
-                       text: "Welcome Dear User, Earn 0.5$ For Each Refferal.\nYou Can Also Apply A Refer Code Too!\nYour Refer Code Is: "+ k +".",
+                       text: "Welcome Dear User, Earn 0.5$ For Each Refferal.\nYou Can Also Apply A Refer Code Too!\nYour Id:"+j+" \nYour Refer Code Is: "+ k +".",
                        icon: "success",
                        button: "Next",
                      })
@@ -226,7 +226,7 @@ swal({ title: "ReferCode Applied!", text: "You Earned +0.5$ !", icon: "success",
  }}
 }else { swal({title: "Invalid Code",icon: "error",button: "Close"})}};//async function CheckUser() { const UseRs = //Parse.Object.extend("Users"); 
 //const query = new Parse.Query(UseRs);
-var j = localStorage.getItem("jright");
+var j = localStorage.getItem("yright");
 //query.equalTo("UserId", j);
 //const results = await query.find(); const y = results.length;
 if (j != undefined) {
