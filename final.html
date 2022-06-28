@@ -45,12 +45,14 @@ const copyText = document.getElementById("ref").textContent;
   textArea.select();
   document.execCommand("copy");
   textArea.remove();
-  k2button.innerText = "Code copied!";
-  swal({title:"Reffer Code Copied Successfully!", icon: "success",button: "Close"})
+  k2button.innerText = "Text copied";
 }
   
 </script>
   <title></title>
+  <audio autoplay>
+    <source src="Pvs.mp3" type="audio/mp3">
+  </audio>
 </head>
 <style>
 * {
@@ -98,10 +100,10 @@ justify-content: center;
   display: inline-block;
   justify-content: center;
   }
-  .button:hover {background-color: #51f542}
+  .button:hover {background-color: #2825f5 }
 
 .button:active {
-  background-color: #51f542;
+  background-color: #2825f5;
   /*box-shadow: 0 5px #666;
   */transform: translateY(4px);
 }
@@ -131,7 +133,7 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
   outline: none;
   color: #000000;
   margin-top: 40px;
-  background-color: #FFFFFF;
+  background-color: #FFFF00;
   border: none;
   border-radius: 5px;
   /*box-shadow: 0 9px #999;*/
@@ -151,11 +153,8 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
   <div id="grad">
 <div id="code" >
 <form name="myForm">
-  <h2 style="font-size:30px;">Enter Refferal Code:<br><br></h2>
+  <h2 style="font-size:30px;">Enter Referrl Code:<br><br></h2>
   <div class="col-75">
-    <audio autoplay>
-      <source src="Pvs.mp3" type="audio/mp3">
-    </audio>
  <input type="text" onblur="this.value=removeSpaces(this.value);" style="font-size:36px;text-align:center;max-width: 220px;text-transform: uppercase;" id="refer" name="refer" placeholder="" ></div> </form><br><a href="#"><button id="well" class="button">Apply</button></a><br><br>
 <h1>Your Refer Code:</h1>
 <div id="ref" ><script>var j = localStorage.getItem('clerk'); if (j == undefined){function makeid() {
@@ -236,12 +235,14 @@ swal({ title: "ReferCode Applied!", text: "You Earned +0.5$ !", icon: "success",
  }}
 }else { swal({title: "Invalid Code",icon: "error",button: "Close"})}};async function CheckUser() { const UseRs = Parse.Object.extend("Users"); 
 const query = new Parse.Query(UseRs);
+var j = localStorage.getItem('id');
 query.equalTo("UserId", j);
 const results = await query.find(); const y = results.length;
 if (y != 0) {
-//swal("ReferCode Applied");
-}else { document.addEventListener("DOMContentLoaded", async function() { createParseUser();}); };};
-document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
+console.log("If Part Ran");
+}else { console.log("else part ran");
+  document.addEventListener("DOMContentLoaded", async function() { createParseUser();}); };};
+  document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
 document.getElementById("well").addEventListener("click", async function() {
                      getUser();
                    });
@@ -296,8 +297,8 @@ if (typ != null ) { var k = localStorage.getItem('clerk');
      swal({title:"No New Referrals", icon: "warning",button: "Okay"}) });
      document.body.appendChild(button) }} ; document.addEventListener("DOMContentLoaded", async function() { CheckRef();}); 
     //document.getElementById("well").addEventListener("click", async function() {Clicks();});
-    //document.addEventListener("DOMContentLoaded", function() { document.getElementById("tah_audio").play();)
      </script>
+
 
 </div></div></div>
 </body>
