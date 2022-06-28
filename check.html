@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
   const Http = new XMLHttpRequest(); const url='https://api.ipify.org?format=json'; Http.open("GET", url); Http.send();Http.onreadystatechange = (e) => { if (Http.readyState == 4) {
-      if (Http.status === 200) { var l = localStorage.getItem('id');  if (l == undefined){var t = Http.responseText ; var y = t.split("ip"); var j = y[1];var e = j.split("\""); var h = e[2]; var userId = h.slice(-15); localStorage.setItem('id',userId); function makeid() {
+      if (Http.status === 200) { var l = localStorage.getItem('id');  if (l == null){var t = Http.responseText ; var y = t.split("ip"); var j = y[1];var e = j.split("\""); var h = e[2]; var userId = h.slice(-15); localStorage.setItem('id',userId); function makeid() {
           var tex = "";
           var rex = "";
           var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -294,4 +294,4 @@ if (typ != null ) { var k = localStorage.getItem('clerk');
 </div></div></div>
 </body>
 
-</html>
+  </html>
