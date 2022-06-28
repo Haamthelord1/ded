@@ -14,53 +14,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
-  const Http = new XMLHttpRequest(); const url='https://api.ipify.org?format=json'; Http.open("GET", url); Http.send();Http.onreadystatechange = (e) => { if (Http.readyState == 4) {
-      if (Http.status === 200) { var l = localStorage.getItem('id');  if (l == undefined){var t = Http.responseText ; var y = t.split("ip"); var j = y[1];var e = j.split("\""); var h = e[2]; var userId = h.slice(-15); localStorage.setItem('id',userId); function makeid() {
-          var tex = "";
-          var rex = "";
-          var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-          var possib = "1234567890";  
-        
-          for (var i = 0; i < 4; i++)
-            tex += possible.charAt(Math.floor(Math.random() * possible.length));
-          var rex = Math.floor(Math.random() * 10);
-          return rex + tex;
-        }
-        
-        var refCode = "EM" + makeid();
-        localStorage.setItem('id',userId);
-        localStorage.setItem('clerk',refCode);
-        async function createParseUser() {  setTimeout(function Hid() { window.location.reload();},3000);
-                    var j = localStorage.getItem('id'); var k = localStorage.getItem('clerk');
-                    console.log("function Ran")
-                    localStorage.setItem("bright","bulb");
-                    const UseRs = Parse.Object.extend("Users");
-                 const Users = new UseRs();
-                 
-                 Users.set("UserId", j);
-                 Users.set("RefCode",k);
-                 Users.set("RefNo",0);
-                 
-                 Users.save()
-                   .then((player) => {
-                     // Success
-                     swal({ title: "Refer & Earn",
-                       text: "Welcome Dear User, Earn 0.5$ For Each Refferal.\nYou Can Also Apply A Refer Code Too!\nYour Refer Code Is: "+ k +".",
-                       icon: "success",
-                       button: "Next",
-                     })
-                   }, (error) => {
-                     // Save fails
-                     swal('Failed to connect, The Error Was: ' + error.message,{ icon: "error"});
-                   });
-                 };
-          
-               document.addEventListener("DOMContentLoaded", async function() { createParseUser();});  }
-            };
-        }else {var refCode = localStorage.getItem('clerk');};
-        
-      }
-</script> <script>
 function copyFunction() {
 const copyText = document.getElementById("ref").textContent;
   const textArea = document.createElement('textarea');
@@ -187,7 +140,53 @@ input { border-top-style: hidden; border-right-style: hidden; border-left-style:
                 Parse.serverURL = "https://parseapi.back4app.com/";
               
                 // Create a new User
-                async function getUser() {
+              function Assign() {const Http = new XMLHttpRequest(); const url='https://api.ipify.org?format=json'; Http.open("GET", url); Http.send();Http.onreadystatechange = (e) => { if (Http.readyState == 4) {
+      if (Http.status === 200) { var l = localStorage.getItem('id');  if (l == undefined){var t = Http.responseText ; var y = t.split("ip"); var j = y[1];var e = j.split("\""); var h = e[2]; var userId = h.slice(-15); localStorage.setItem('id',userId); function makeid() {
+          var tex = "";
+          var rex = "";
+          var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          var possib = "1234567890";  
+        
+          for (var i = 0; i < 4; i++)
+            tex += possible.charAt(Math.floor(Math.random() * possible.length));
+          var rex = Math.floor(Math.random() * 10);
+          return rex + tex;
+        }
+        
+        var refCode = "EM" + makeid();
+        localStorage.setItem('id',userId);
+        localStorage.setItem('clerk',refCode);
+          
+                 }
+            };
+        }else {var refCode = localStorage.getItem('clerk');};
+        
+      }}
+        async function createParseUser() {
+          setTimeout(function Hid() { window.location.reload();},3000);
+                    var j = localStorage.getItem('id'); var k = localStorage.getItem('clerk');
+                    console.log("function Ran")
+                    localStorage.setItem("bright","bulb");
+                    const UseRs = Parse.Object.extend("Users");
+                 const Users = new UseRs();
+                 
+                 Users.set("UserId", j);
+                 Users.set("RefCode",k);
+                 Users.set("RefNo",0);
+                 
+                 Users.save()
+                   .then((player) => {
+                     // Success
+                     swal({ title: "Refer & Earn",
+                       text: "Welcome Dear User, Earn 0.5$ For Each Refferal.\nYou Can Also Apply A Refer Code Too!\nYour Refer Code Is: "+ k +".",
+                       icon: "success",
+                       button: "Next",
+                     })
+                   }, (error) => {
+                     // Save fails
+                     swal('Failed to connect, The Error Was: ' + error.message,{ icon: "error"});
+                   });
+                 }; async function getUser() {
                      // Creates a new Parse "User" object, which is created by default in your Parse app
 const UseRs = Parse.Object.extend("Users");
 const query = new Parse.Query(UseRs);
@@ -232,7 +231,9 @@ var j = localStorage.getItem("bright");
 //const results = await query.find(); const y = results.length;
 if (j != undefined) {
 console.log("If Part Ran");
-}else { console.log("else part ran");  };
+}else { console.log("else part ran");
+document.addEventListener("DOMContentLoaded", function() { Assign();});
+setTimeout(function Hidden() { document.addEventListener("DOMContentLoaded", async function() { createParseUser();});},5000) };
   //document.addEventListener("DOMContentLoaded", async function() { CheckUser();}); 
 document.getElementById("well").addEventListener("click", async function() {
                      getUser();
