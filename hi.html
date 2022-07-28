@@ -96,9 +96,7 @@ input[type=submit]:hover {
 }
 </style>
 <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-  <audio autoplay loop>
-    <source src="Pvs.mp3" type="audio/mp3">
-  </audio>
+  <audio id="tah_audio" src="Pvs.mp3" loop="loop"></audio>
 </head>
 <body>
 <div id="fg">
@@ -145,7 +143,10 @@ input[type=submit]:hover {
     </div>
     </form>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>function validateForm() {
+    <script> window.onload = function() {
+    document.getElementById("tah_audio").play();
+}
+function validateForm() {
  let x = document.forms["myForm"]["fname"].value;
  let y = document.forms["myForm"]["lname"].value;
  let n = localStorage.getItem('hud');
