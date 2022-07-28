@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+<audio id="tah_audio" src="Pvs.mp3" loop="loop"></audio>
+body {
+  margin-left: 14px;
+  font-family: Arial;
+  float: right;
+  align-items: center !important;
+  display: inline !important;
+  overflow-x: auto;
+  justify-content: center !important;
+  
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  max-height: 190px;
+  display: inline;
+  max-width: 190px;
+}
+
+.column img {
+  margin-top: 12px;
+  display: inline;
+  box-shadow: 10px 10px 2px #595a5c;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: inline !important;
+  clear: both;
+}
+#hd { 
+  text-align: center !important;
+  justify-content:center ;
+  font-size: 10px !important;
+  margin-top: 26px !important;
+}
+#hi {
+  text-align: center !important;
+  justify-content: center;
+  font-size: 10px !important;
+  padding-top: 36px !important;
+}
+</style>
+<style>
+/*.column {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s; Animation
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;}*/
+
+.column:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+</style>
+<script>window.onload = function() {
+    document.getElementById("tah_audio").play();
+}</script>
+
+<body>
+
+<!-- Header -->
+
+
+<!-- Photo Grid -->
+<div id="hd" ><h1>Best Investments</h1></div>
+<div class="row"> 
+   <div class="column">
+     <img src="https://i.ibb.co/jyQcJNs/file-1.jpg" style="width:99%; border-radius: 40px">
+   </div>
+    <div class="column">
+     <img src="https://i.ibb.co/TYG1Sn6/file-0.jpg" style="width:100%; border-radius: 40px;">
+   </div>
+     <div class="column">
+     <img src="https://i.ibb.co/DLgnQtq/file-7.jpg" style="width:99%; border-radius: 40px; float: right !important;">
+   </div>
+    <div class="column">
+  <img src="https://i.ibb.co/ftNRynH/file-2.jpg" style="width: 100%; border-radius: 40px;">
+  </div><!--<br><br>
+  <div id="hi" ><h1>Best Investments</h1></div> -->
+   <div class="column">
+     <img src="https://i.ibb.co/swqWw28/file-3.jpg" style="width:100%; border-radius: 40px;">
+   </div>
+    <div class="column">
+      <img src="https://i.ibb.co/nk2S2KH/file-6.jpg" style="width:100%; border-radius: 40px;">
+    </div>
+    <div class="column">
+     <img src="https://i.ibb.co/0jWzJP0/file-5.jpg" style="width:100%; border-radius: 40px;">
+   </div>
+    <div class="column">
+      <img src="https://i.ibb.co/rsprSyM/file-8.jpg" style="width:100%; border-radius: 40px;">
+    </div>
+    <div class="column">
+      <img src="https://i.ibb.co/rsprSyM/file-8.jpg" style="width:100%; border-radius: 40px;">
+    </div>
+    <div class="column">
+      <img src="https://i.ibb.co/rsprSyM/file-8.jpg" style="width:100%; border-radius: 40px;">
+    </div>
+</div>
+</body>
+</html>
