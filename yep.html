@@ -69,9 +69,12 @@ body {
 }
 </style>
 <body>
-<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-  <audio autoplay loop>
-    <source src="Pvs.mp3" type="audio/mp3">
+<audio src="Pvs.mp3" id="my_audio" loop="loop"></audio>
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById("my_audio").play();
+    }
+  </script>
   </audio>
 <!-- Header -->
 
